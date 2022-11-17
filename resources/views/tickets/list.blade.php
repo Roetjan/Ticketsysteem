@@ -10,11 +10,13 @@
             <th>gemaakt op</th>
         </tr>
         <tr>
-            {{-- @dd($allTickets) --}}
+            
             @foreach ($allTickets as $ticket)
-                <td>{{ $ticket->users->name }}</td>
-                <td>{{ $ticket->users->qr_hash }}</td>
+            @dd($allTickets)
+                <td>{{ $ticket->Users()->name }}</td>
+                <td>{{ $ticket->Users()->qr_hash }}</td>
                 <td>{{ }}</td>
+                
             @endforeach
         </tr>
     </table>
