@@ -23,6 +23,6 @@ class Eventscontroller extends Controller
         $newEvent->description = $request->input('description');
         $newEvent->save();
 
-        return view('/admin/event');
+        return view('/admin/add-event');
     }
 }

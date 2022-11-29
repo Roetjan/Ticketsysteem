@@ -2,22 +2,28 @@
 
 @section('content')
    <a href="{{ route('addEvent') }}">Add event</a>
-    <table class="table">
-        <tr>
-            <th>user_id</th>
-            <th>qr_hash</th>
-            <th>event_id</th>
-            <th>gemaakt op</th>
-        </tr>
-        <tr>
-            
-            @foreach ($allTickets as $ticket)
-            @dd($allTickets)
-                <td>{{ $ticket->Users()->name }}</td>
-                <td>{{ $ticket->Users()->qr_hash }}</td>
-                <td>{{ }}</td>
-                
-            @endforeach
-        </tr>
+   <div class="container">
+    <table class="table table-ordered">
+        <thead>
+            <tr>
+                <th>naam</th>
+                <th>qr_hash</th>
+                <th>event_id</th>
+                <th>gemaakt op</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                @foreach ($allTickets as $ticket)
+                <tr>
+
+                    <td>{{ $ticket->user->name }}</td>
+                    <td>{{ $ticket->user->qr_hash }}</td>
+                    <td>{{ $ticket->user->event_id }}</td>
+                </tr>
+
+                @endforeach
+        </tbody>
     </table>
+</div>
 @endsection

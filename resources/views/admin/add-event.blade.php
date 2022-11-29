@@ -3,16 +3,12 @@
 @section('content')
     <form action="{{ route('addEvent') }}" class="form-control mt-10" method="POST">
         @csrf
-        <div class="form-row">
-            <div class="form-group col-md-6">
+
+            <div class="form-group">
               <label for="name">Naam</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="naam">
             </div>
-            <div class="form-group col-md-6">
-              <label for="picture">Afbeelding</label>
-              <input type="file" class="form-control" id="picture" name="picture" accept="image/png, image/gif, image/jpeg">
-            </div>
-          </div>
+
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="event_start">Event start</label>
@@ -38,10 +34,15 @@
                 <label for="price">prijs</label>
                 <input type="number" name="price" class="form-control " placeholder="prijs" step=".01">
             </div>
+
             <div class="form-group col-md-6">
-                <label for="description">Beschrijving</label>
-                <textarea name="description" id="description" cols="41" rows="10"></textarea>
-            </div>
+                <label for="picture">Afbeelding</label>
+                <input type="file" class="form-control" id="picture" name="picture" accept="image/png, image/gif, image/jpeg">
+              </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="description">Beschrijving</label>
+            <textarea name="description" id="description" cols="90" rows="6"></textarea>
         </div>
         <button type="submit" class="btn btn-dark bg-dark">Maak Event</button>
         
