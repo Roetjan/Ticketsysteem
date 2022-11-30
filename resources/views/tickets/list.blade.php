@@ -1,29 +1,21 @@
 @extends('layouts.base')
 
 @section('content')
-   <a href="{{ route('addEvent') }}">Add event</a>
-   <div class="container">
-    {{-- <table class="table table-ordered">
-        <thead>
-            <tr>
-                <th>naam</th>
-                <th>qr_hash</th>
-                <th>event_id</th>
-                <th>gemaakt op</th>
-            </tr>
-        </thead>
-        <tbody>
-
-                @foreach ($allTickets as $ticket)
-                <tr>
-
-                    <td>{{ $ticket->user->name }}</td>
-                    <td>{{ $ticket->user->qr_hash }}</td>
-                    <td>{{ $ticket->user->event_id }}</td>
-                </tr>
-
-                @endforeach
-        </tbody>
-    </table> --}}
-</div>
+   {{-- <a href="{{ route('addEvent') }}">Add event</a> --}}
+   <div class="container-fluid mt-10">
+    <div class="row p-2">
+        @foreach ($allTickets as $ticket)
+            <div class="ticketBlock col-6 border border-primary rounded d-flex">
+                <div class="img-fluid w-25">
+                    <img src="https://picsum.photos/150/150" alt="Event_ticket">
+                </div>
+                <div class="text w-75">
+                   <h4>{{ $ticket->user->name }}</h4> 
+                    {{ $ticket->user->qr_hash }}
+                    {{ $ticket->user->event_id }}
+                </div>
+            </div>
+        @endforeach
+    </div>
+    </div>
 @endsection
