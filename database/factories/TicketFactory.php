@@ -19,8 +19,8 @@ class TicketFactory extends Factory
     {
         return [
             'qr_hash' => Str::random(20),
-            'user_id' => 1,
-            'event_id' => 1
+            'user_id' => ,
+            'event_id' => rand(1, 999)
         ];
     }
 }
