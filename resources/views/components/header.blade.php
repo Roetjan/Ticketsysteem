@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a href="{{ route('listTickets') }}" class="nav-link">Tickets</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('showEvent') }}" class="nav-link">Add Event</a>
+                    </li>
                 @else
                     <li class="nav-item">
                         <a href="#" class="nav-link">Support</a>
