@@ -19,7 +19,7 @@ class EventFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'picture' => Str::random(10),
+            'picture' => 'https://picsum.photos/200/200',
             'event_start' => now(),
             'event_end' => now(),
             'max_tickets' => rand(0, 100),
