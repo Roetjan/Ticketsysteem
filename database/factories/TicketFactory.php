@@ -18,9 +18,7 @@ class TicketFactory extends Factory
     public function definition()
     {
         return [
-            'qr_hash' => Str::random(20),
-            'user_id' => ,
-            'event_id' => rand(1, 999)
+            
         ];
     }
 }
