@@ -28,7 +28,7 @@ Route::post('/create-ticket', [TicketsController::class, 'createTicket'])->name(
 
 Route::post('/send-contact', [PagesController::class, 'sendContact'])->name('sendContact');
 
-Route::get('/admin/add-event', [Eventscontroller::class, 'showAddEvent'])->middleware('auth')->name('addEvent');
+Route::get('/admin/add-event', [Eventscontroller::class, 'showAddEvent'])->middleware('auth')->name('showEvent');
 
 Route::post('/admin/add-event', [Eventscontroller::class, 'addEvent'])->middleware('auth')->name('addEvent');
 
