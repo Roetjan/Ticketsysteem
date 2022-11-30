@@ -3,7 +3,7 @@
 @section('content')
    <a href="{{ route('addEvent') }}">Add event</a>
    <div class="container">
-    <table class="table table-ordered">
+    {{-- <table class="table table-ordered">
         <thead>
             <tr>
                 <th>naam</th>
@@ -24,6 +24,6 @@
 
                 @endforeach
         </tbody>
-    </table>
+    </table> --}}
 </div>
 @endsection
