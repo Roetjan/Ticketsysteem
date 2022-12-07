@@ -11,7 +11,7 @@ class TicketsController extends Controller
 {
     public function viewTicket(){
         // $tickets = User::where('id', Auth::id())->get();
-        $allTickets = Ticket::all();
+        $allTickets = Ticket::where('user_id', Auth::id());
         
         return view('tickets.list', [
             "allTickets" => $allTickets
