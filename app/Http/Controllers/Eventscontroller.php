@@ -11,6 +11,20 @@ class Eventscontroller extends Controller
         return view('admin/add-event');
     }
 
+    public function viewEvent(){
+        $events = Event::all();
+
+        return view('event.events',[
+            "events" => $events
+        ]);
+    }
+
+    public function deleteEvent($eventId){
+        $eventDelete = Event::findOrFail($eventId);
+        $eventDelete->delete();
+        return redirect()->route('viewEvent');
+    }
+
     public function addEvent(Request $request) {
         $newEvent = new Event();
         $newEvent->name = $request->input('name');
