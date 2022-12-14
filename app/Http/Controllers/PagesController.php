@@ -26,6 +26,12 @@ class PagesController extends Controller
         return view('form');
     }
 
+    public function viewAdmin() {
+        return view('admin.admin');
+    }
+
+    
+
     public function sendContact(Request $request)
     {
         $newContact = new Contact();
