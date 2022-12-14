@@ -24,6 +24,10 @@ Route::get('/contact', [PagesController::class, 'viewContact'])->name('contact')
 
 Route::get('/ticket', [TicketsController::class, 'viewTicket'])->name('listTickets')->middleware('auth');
 
+Route::get('/events', [EventsController::class, 'viewEvent']);
+
+Route::get('/admin/delete-event/{event_id}', [Eventscontroller::class, 'deleteEvent'])->middleware('auth')->name("deleteEvent");
+
 Route::post('/create-ticket', [TicketsController::class, 'createTicket'])->name('createTicket');
 
 Route::post('/send-contact', [PagesController::class, 'sendContact'])->name('sendContact');
@@ -32,4 +36,6 @@ Route::get('/admin/add-event', [Eventscontroller::class, 'showAddEvent'])->middl
 
 Route::post('/admin/add-event', [Eventscontroller::class, 'addEvent'])->middleware('auth')->name('addEvent');
 
+// show Admin panel
+Route::get('/admin/panel', [PagesController::class, 'viewAdmin'])->middleware('auth');
 require __DIR__.'/auth.php';
