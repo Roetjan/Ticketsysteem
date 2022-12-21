@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Models\User;
+use Illuminate\support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,7 @@ class TicketsController extends Controller
     public function createTicket(Request $request){
         $newTicket = new Ticket();
         $newTicket->owner = $request->input('owner');
-        $newTicket->qr = $request->input('qr');
+        $newTicket->qr = Str::random(50);
         $newTicket->event = $request->input('event');
         $newTicket->description = $request->input('desc');
         $newTicket->save();
