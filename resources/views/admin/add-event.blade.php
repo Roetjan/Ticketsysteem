@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <form action="{{ route('addEvent') }}" class="form-control mt-10" method="POST">
+    <form action="{{ route('addEvent') }}" class="form-control mt-10" method="POST" enctype="multipart/form-data">
         @csrf
 
             <div class="form-group">
