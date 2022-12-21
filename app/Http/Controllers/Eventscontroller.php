@@ -23,8 +23,32 @@ class Eventscontroller extends Controller
     public function deleteEvent($eventId){
         $eventDelete = Event::findOrFail($eventId);
         $eventDelete->delete();
-        return redirect()->route('viewEvent');
+        return redirect()->view("event.events");
     }
+
+    public function showEvent($eventId) {
+        $event = Event::findOrFail($eventId);
+        
+        return view('admin/edit-event', [
+            "event" => $event
+        ]);
+        
+    }
+
+    public function UpdateEvent(Request $request, $eventId){
+        $event = Event::findOrFail($eventId);
+        $event->name = $request->input('name');
+        $event->event_start = $request->input('event_start');
+        $event->event_end = $request->input('event_end');
+        $event->max_tickets = $request->input('max_tickets');
+        $event->location = $request->input('location');
+        $event->price = $request->input('price');
+        $event->description = $request->input('description');
+
+        $event->save();
+    }
+
+    
 
     public function addEvent(Request $request) {
         $newEvent = new Event();
