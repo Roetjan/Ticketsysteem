@@ -26,7 +26,10 @@ Route::get('/ticket', [TicketsController::class, 'viewTicket'])->name('listTicke
 
 Route::get('/events', [EventsController::class, 'viewEvent']);
 
-Route::get('/admin/delete-event/{event_id}', [Eventscontroller::class, 'deleteEvent'])->middleware('auth')->name("deleteEvent");
+Route::get('/admin/edit-event/{eventId}', [Eventscontroller::class, 'showEvent'])->name('showEvent')->middleware('auth');
+Route::post('/admin/edit-event/{eventId}', [Eventscontroller::class, 'UpdateEvent'])->name('UpdateEvent')->middleware('auth');
+
+Route::get('/admin/delete-event/{eventId}', [Eventscontroller::class, 'deleteEvent'])->middleware('auth')->name("deleteEvent");
 
 Route::post('/create-ticket', [TicketsController::class, 'createTicket'])->name('createTicket');
 
