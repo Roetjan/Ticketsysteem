@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand text-bg-primary h-20">
     <div class="container-fluid w-75">
         <a href="{{ route('home') }}" class="navbar-brand">inc</a>
