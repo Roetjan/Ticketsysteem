@@ -62,10 +62,10 @@ class Eventscontroller extends Controller
         $newEvent->description = $request->input('description');
 
 
-        Storage::makeDirectory('public/img');
-        $src = Storage::putfile('public/img', $request->file('picture'));
-        $src = str_replace('public', 'storage', $src);
-        $newEvent->picture = $src;
+        // Storage::makeDirectory('public/img');
+        // $src = Storage::putfile('public/img', $request->file('picture'));
+        // $src = str_replace('public', 'storage', $src);
+        // $newEvent->picture = $src;
         $newEvent->save();
 
         return view('/admin/add-event');
