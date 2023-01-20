@@ -24,7 +24,7 @@ Route::get('/contact', [PagesController::class, 'viewContact'])->name('contact')
 
 Route::get('/ticket', [TicketsController::class, 'viewTicket'])->name('listTickets')->middleware('auth', 'admin');
 
-Route::get('/events', [EventsController::class, 'viewEvent']);
+Route::get('/events', [EventsController::class, 'viewEvent'])->name('viewEvents');
 
 Route::get('/admin/edit-event/{eventId}', [Eventscontroller::class, 'showEvent'])->name('showEvent')->middleware('auth', 'admin');
 Route::post('/admin/edit-event/{eventId}', [Eventscontroller::class, 'UpdateEvent'])->name('UpdateEvent')->middleware('auth', 'admin');

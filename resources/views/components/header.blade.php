@@ -23,11 +23,10 @@
                     <li class="nav-item">
                         <a href="{{ route('showEvent') }}" class="nav-link">Add Event</a>
                     </li>
-                @else
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Support</a>
+                        <a href="{{ route('viewEvents') }}" class="nav-link">EventList</a>
                     </li>
-
+                @else
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">Login</a>
                     </li>
