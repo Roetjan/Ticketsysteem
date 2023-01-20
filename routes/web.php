@@ -39,8 +39,5 @@ Route::get('/admin/add-event', [Eventscontroller::class, 'showAddEvent'])->middl
 
 Route::post('/admin/add-event', [Eventscontroller::class, 'addEvent'])->middleware('auth', 'admin')->name('addEvent');
 
-Route::post('/admin/add-event', [Eventscontroller::class, 'addEvent'])->middleware('auth')->name('addEvent');
 
-// show Admin panel
-Route::get('/admin/panel', [PagesController::class, 'viewAdmin'])->middleware('auth');
 require __DIR__.'/auth.php';
