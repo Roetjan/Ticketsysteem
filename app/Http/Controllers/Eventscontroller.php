@@ -23,7 +23,7 @@ class Eventscontroller extends Controller
     public function deleteEvent($eventId){
         $eventDelete = Event::findOrFail($eventId);
         $eventDelete->delete();
-        return redirect()->view("event.events");
+        return redirect()->route('viewEvents');
     }
 
     public function showEvent($eventId) {
@@ -46,6 +46,7 @@ class Eventscontroller extends Controller
         $event->description = $request->input('description');
 
         $event->save();
+        return redirect()->route('viewEvents');
     }
 
     
